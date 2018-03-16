@@ -1,0 +1,62 @@
+---
+layout: minimal
+title: Nottario Pay
+---
+<form action="{{ site.payment_lambda }}" method="POST">
+  <table class="table table-dark">
+    <tbody>
+      <tr>
+        <th>Filename</th>
+        <td><input id="name" class="form-control" type="text" name="name" value=""></td>
+      </tr>
+      <tr>
+        <th>File type</th>
+        <td><input id="type" class="form-control" type="text" name="type" value=""></td>
+      </tr>
+      <tr>
+        <th>File size</th>
+        <td><input id="size" class="form-control" type="text" name="size" value=""></td>
+      </tr>      
+      <tr>
+        <th>Last modified</th>
+        <td><input id="lastModified" class="form-control" type="text" name="lastModified" value=""></td>
+      </tr>      
+      <tr>
+        <th>Hash</th>
+        <td><input id="hash" class="form-control" type="text" name="hash" value=""></td>
+      </tr>
+    </tbody>
+  </table> 
+  <input type="hidden" name="success" value="http://windermere:8000/success.html">
+  <input type="hidden" name="failure" value="http://windermere:8000/error.html">
+
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="{{ site.stripe_key }}"
+    data-amount="{{ site.stripe_price }}"
+    data-name="{{ site.stripe_name }}"
+    data-description="Notarisation charge"
+    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+    data-locale="auto"
+    data-currency="{{ site.stripe_currency }}">
+  </script>
+</form>
+<script deferred>
+    var str = window.location.search.replace(/^\?/,'')
+    console.log(str);
+    var bits = str.split('&')
+    console.log(bits);
+    var obj =  {};
+    // ["x=1","y=2"] 
+    for(var i in bits) {
+      var bit = bits[i];
+      var kv = bit.split('=');
+      obj[kv[0]]=decodeURIComponent(kv[1]);
+    }
+    console.log(obj);
+    $('#name').val(obj.name);
+    $('#size').val(obj.size);
+    $('#type').val(obj.type);
+    $('#lastModified').val(obj.lastModified);
+    $('#hash').val(obj.hash);
+  </script>
