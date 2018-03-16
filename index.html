@@ -8,6 +8,6 @@ title: Nottario
   <a href="about.html" class="btn btn-lg btn-secondary">Learn more</a>
 </p>
 
-<div v-bind:class="{ dragging: dragging }" v-if="!hash" id="drop_zone" ondrop="drop_handler(event);" ondragover="allowDrop(event)" ondragleave="dragout(event)">
+<div id="drop_zone" ondrop="drop_handler(event);" ondragover="allowDrop(event)" ondragleave="dragout(event)">
   <h2>Drag and drop a file here to get started</h2>
 </div>

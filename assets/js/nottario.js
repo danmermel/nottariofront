@@ -1,49 +1,16 @@
-var app = new Vue({
-  el: '#app',
-  data: {
-    etherscanLink:"",
-    hash:"",
-    name:"",
-    lastModified:"",
-    size:"",
-    type:"",
-    error: "",
-    profile: null,
-    nottarioHistory: null,
-    upload_visible: false,
-    dragging: false
-  },
-  methods: {
-    about: function (){
-      window.location.href = "about.html";
-    },
-    contact: function (){
-      window.location.href = "contact.html";
-    },
-    display_upload: function() {
-      window.scrollTo(0,0);
-      app.upload_visible = true;
-    },
-    cancel_upload: function() {
-      app.upload_visible = false;
-      app.hash = "";
-      app.name = "";
-      app.lastModified = "";
-      app.size = "";
-      app.type = "";
-      app.error =  "";
-   }
-  }
-})
+var app={};
 
 function allowDrop(ev) {
   ev.preventDefault();
   app.dragging = true;
+  $("#drop_zone").addClass("dragging");
 }
 
 function dragout(ev) {
   console.log('drag out');
   app.dragging=false;
+  $("#drop_zone").removeClass("dragging");
+
 }
 
 function drop_handler(ev) {
