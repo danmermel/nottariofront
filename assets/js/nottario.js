@@ -46,4 +46,9 @@ function drop_handler(ev) {
   reader.readAsText(f);
 }
 
+function reveal() {
+  $("#drop_zone").show();
+  $("#notarise_now").hide();
+}
+
 

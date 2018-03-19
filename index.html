@@ -4,10 +4,38 @@ title: Nottario
 ---
 <h1 class="cover-heading">{{ page.title }}</h1>
 <p class="lead">Notarise documents using the Ethereum blockchain.</p>
-<p class="lead">
-  <a href="about.html" class="btn btn-lg btn-secondary">Learn more</a>
+<p class="lead" id="notarise_now">
+  <a href="javascript:reveal()" class="btn btn-lg btn-secondary">Notarise Now!</a>
 </p>
 
 <div id="drop_zone" ondrop="drop_handler(event);" ondragover="allowDrop(event)" ondragleave="dragout(event)">
   <h2>Drag and drop a file here to get started</h2>
 </div>
+
+<section id="contact">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-lg-4">
+        <i class="fa fa-file-text-o fa-5x icon-padding" aria-hidden="true"></i>
+        <i class="fa fa-arrow-right fa-5x icon-padding" aria-hidden="true"></i>
+        <i class="fa fa-slack fa-5x icon-padding" aria-hidden="true"></i>
+        <p><strong><i>1. We turn your document into a cryptographic hash</i></strong> </p>
+      </div>
+      <div class="col-lg-4">
+        <i class="fa fa-slack fa-5x icon-padding" aria-hidden="true"></i>
+        <i class="fa fa-arrow-right fa-5x icon-padding" aria-hidden="true"></i>
+        <i class="fa fa-chain fa-5x icon-padding" aria-hidden="true"></i>
+        <p><strong><i>2. We upload the hash to the Ethereum Blockchain</i></strong> </p>
+      </div>
+      <div class="col-lg-4">
+        <i class="fa fa-certificate fa-5x icon-padding" aria-hidden="true"></i>
+        <i class="fa fa-check fa-5x icon-padding" aria-hidden="true"></i>
+        <p><strong><i>3. You keep your Notarisation Certificate!</i></strong> </p>
+      </div>
+    </div>
+    <div class="row text-center">
+      <a class ="skills" href="about.html"><p>Find out more</p></a>
+    </div>
+  </div>
+</section>
+
