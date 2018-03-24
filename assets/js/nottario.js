@@ -51,4 +51,27 @@ function reveal() {
   $("#notarise_now").hide();
 }
 
+function verify_file(ev) {
+  $('#verified').hide()
+  $('#unverified').hide();
+  console.log("Verifying");
+  ev.preventDefault();
+  var f = ev.dataTransfer.files[0];
+  console.log ("the file is" , f);
+  var reader = new FileReader();
+  reader.onload = function(event) {
+    //console.log('onload!',event);
+    sha256(event.target.result).then(function(d){
+      droppedHash = d
+      console.log("new hash is ",droppedHash);
+      console.log("old hash is ", contract.hash);
+       if (droppedHash == contract.hash) {
+         $('#verified').show();
+       } else {
+         $('#unverified').show();
+       }
+    });  
 
+  };
+  reader.readAsText(f);
+}
