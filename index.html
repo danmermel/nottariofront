@@ -2,11 +2,25 @@
 layout: default
 title: Nottario
 ---
-<h1 class="cover-heading">{{ page.title }}</h1>
-<p class="lead">Notarise documents using the Ethereum blockchain.</p>
-<p class="lead" id="notarise_now">
-  <a href="javascript:reveal()" class="btn btn-lg btn-secondary">Notarise Now!</a>
-</p>
+  <header>
+      <div class="container" id="maincontent" tabindex="-1">
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="intro-text">
+                      <h1 class="name">Nottar.io</h1>
+                      <hr class="star-light">
+                      <span class="skills">Notarise documents using the Ethereum blockchain</span>
+                  </div>
+                  <div>
+                    <p class="lead" id="notarise_now">
+                      <a href="javascript:reveal()" class="btn btn-lg btn-secondary">Notarise Now!</a>
+                    </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </header>
+
 
 <div id="drop_zone" ondrop="drop_handler(event);" ondragover="allowDrop(event)" ondragleave="dragout(event)">
   <h2>Drag and drop a file here to get started</h2>

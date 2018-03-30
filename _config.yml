@@ -20,6 +20,8 @@ stripe_price: 999
 stripe_currency: gbp
 stripe_name: Exor Ventures Ltd (Nottario)
 payment_lambda: https://o8lbv2rr1e.execute-api.eu-west-1.amazonaws.com/nottario_live/nottarioFiatPayment
+get_lambda: https://o8lbv2rr1e.execute-api.eu-west-1.amazonaws.com/nottario_live/nottarioFiatGet
+check_lambda: https://o8lbv2rr1e.execute-api.eu-west-1.amazonaws.com/nottario_live/nottarioFiatCheck
 email: your-email@example.com
 twitter: nottario
 

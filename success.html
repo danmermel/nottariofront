@@ -6,7 +6,7 @@ title: Payment Success
   <script>
      var id = window.location.search.replace(/^\?/,'')
      console.log(id);
-     var action_url = 'https://o8lbv2rr1e.execute-api.eu-west-1.amazonaws.com/nottario_live/nottarioFiatCheck';
+     var action_url = '{{ site.check_lambda }}';
      setInterval(function() {
        $.ajax({
          type: 'POST',

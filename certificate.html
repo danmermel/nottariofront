@@ -35,7 +35,7 @@ title: Notarisation Certificate
      var id = window.location.search.replace(/^\?/,'')
      console.log(id);
      var contract = {};
-     var action_url = 'https://o8lbv2rr1e.execute-api.eu-west-1.amazonaws.com/nottario_live/NottarioFiatGet';
+     var action_url = '{{ site.get_lambda }}'
      $.ajax({
        type: 'POST',
        url: action_url,
