@@ -27,8 +27,8 @@ title: Nottario Pay
       </tr>
     </tbody>
   </table> 
-  <input type="hidden" name="success" value="http://windermere:4000/success.html">
-  <input type="hidden" name="failure" value="http://windermere:4000/error.html">
+  <input type="hidden" name="success" value="{{ site.success_url }}">
+  <input type="hidden" name="failure" value="{{ site.error_url }}">
 
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
