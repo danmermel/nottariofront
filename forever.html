@@ -1,0 +1,37 @@
+---
+layout: default
+title: Access your certificate forever
+---
+
+<h1>How to access your certificate information, for ever!</h1>
+
+Nottario uses the <a href="ethereum.html">Ethereum blockchain</a> because we think it is a solid, credible platform that is likely to endure.
+
+One of the great things about blockchains is that all the data in a blockchain is publicly accessible and virtually indestructible.
+
+At the present time there are <a href="https://ethernodes.org/network/1">tens of thousands of copies</a> of the Ethereum blockchain in existence, and if you use <a href="index.html">Nottario</a> to notarise your document, there will be tens of thousands of proofs of that too (one in every copy of the blockchain!).
+
+You can always access your certificate at https://nottar.io/certificate.html?#your_address#.
+
+But even if <a href="index.html">Nottario</a> itself were to go out of business, you would still be able to access your certificate. 
+
+<h2>How?</h2>
+
+Your certificate is a Smart Contract on the Ethereum blockchain. Every smart contract on the Ethereum blockchain has two unique aspects that allow you to access it:
+The ABI definition: The ABI (Application Binary Interface) is like the instruction booklet for your Smart Contract. It defines what you can do with it and how you can access values inside it, like the crucial document hash.
+The address: This is, like a postal address, the location of your certificate inside the blockchain.
+
+With the above two pieces of information you can access the data inside the certificate.
+
+When you notarised your document we emailed you both of these things. But here they are again.
+
+The address is the long series of letters and numbers in your certificate URL. You should keep a note of it for future reference.
+
+The  ABI for your certificate Smart Contract is
+<pre> [{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"hash","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"size","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"timestamp","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"file_timestamp","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"mime_type","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_hash","type":"bytes32"},{"name":"_name","type":"bytes32"},{"name":"_mime_type","type":"bytes32"},{"name":"_size","type":"uint256"},{"name":"_file_timestamp","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]</pre>
+
+You will probably need to ask someone with coding skills to access the data inside the certificate. But this is not rocket science and, above all, your proof of notarisation will ALWAYS be there, as long as a single publicly-accessible copy of the Ethereum blockchain exists.
+
+<div class="text-center">
+  <a href="/" class="btn btn-primary btn-lg buttonspace">Notarise Now</a>
+</div>
