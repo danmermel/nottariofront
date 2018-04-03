@@ -69,27 +69,3 @@
 	border: 2px solid #18BC9C;
 }
 
-mainblock {
-  border-radius: 25px;
-  background-color: #18BC9C
-}
-
-mainblock .container {
-  padding-top: 100px;
-  padding-bottom: 50px;
-}
-mainblock img {
-  display: block;
-  margin: 0 auto 20px;
-}
-mainblock .intro-text .name {
-  display: block;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 2em;
-}
-mainblock .intro-text .skills {
-  font-size: 1.25em;
-  font-weight: 300;
-}
