@@ -52,11 +52,11 @@ title: Notarisation Certificate
          $('#name').html(d.name)
          $('#hash').html(d.hash)
          var lastmod = new Date(parseInt(d.lastModified))
-         console.log(lastmod);
          $('#lastModified').html(lastmod)
          $('#type').html(d.type)
          $('#size').html(d.size)
-         $('#timestamp').html(d.completed_date)
+         var compdate = new Date (d.completed_date)
+         $('#timestamp').html(compdate)
          $("#drop_zone").show();
        }
      })
