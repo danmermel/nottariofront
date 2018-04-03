@@ -2,12 +2,21 @@
 layout: default
 title: Payment Success
 ---
+  <h1>{{ page.title }}</h1>
+  <p>Blurb here</p>
+  <table  class="table table-striped">
+    <tr><th>Name</th><td id="name"></td></tr>
+    <tr><th>Submitted to the Blockchain on</th><td id="submitted"></td></tr>
+    <tr><th>Blockchain Transaction Id</th><td id="transid"></td></tr>
+  </table>
+  <img src="assets/img/pacman.gif"></img>
+
   <div id="status"></div>
   <script>
      var id = window.location.search.replace(/^\?/,'')
      console.log(id);
      var action_url = '{{ site.check_lambda }}';
-     setInterval(function() {
+     var poller = function() {
        $.ajax({
          type: 'POST',
          url: action_url,
@@ -16,14 +25,17 @@ title: Payment Success
            console.log('error',e);
          },
          success: function(d) {
-           $('#status').html(JSON.stringify(d.Item));
+           $('#submitted').html(new Date(d.Item.submitted_date));
+           $('#transid').html(d.Item.eth_transaction_id);
            if(d.Item.stat=="completed") {
              window.location="certificate.html?"+d.Item.eth_contract_id
+           } else {
+             setTimeout(poller, 5000);
            }
-           console.log('success', d);
          }
        })
-     }, 5000);
+     };
 
+  poller();
   </script>
 
