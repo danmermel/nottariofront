@@ -51,7 +51,7 @@ title: Notarisation Certificate
          $('#status').html(JSON.stringify(d));
          $('#name').html(d.name)
          $('#hash').html(d.hash)
-         var lastmod = new Date(d.lastModified)
+         var lastmod = new Date(parseInt(d.lastModified))
          console.log(lastmod);
          $('#lastModified').html(lastmod)
          $('#type').html(d.type)
