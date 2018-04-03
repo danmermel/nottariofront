@@ -4,8 +4,12 @@
   height: 200px;
 }
 
+.skills {
+ margin-left:50px;
+}
+
 #contact {
-  background-color:#eee
+/*  background-color:#eee */
 }
 
 .contacttxt {
