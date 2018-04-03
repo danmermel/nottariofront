@@ -55,10 +55,6 @@
 	margin-bottom: 20px;
 }
 
-[v-cloak] {
-  display: none;
-}
-
 .verified {
        margin-top: 20px;
        color: green;
@@ -80,4 +76,8 @@
 
 a.title, a.title:hover, a.title:focus, a.title:active {
   color: white
+}
+
+pre {
+  color:white
 }
