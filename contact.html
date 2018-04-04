@@ -4,13 +4,13 @@ title: Contact Nottario
 ---
 <h2>{{ page.title }}</h1>
 <script src='https://www.google.com/recaptcha/api.js'></script>
-<form class="article" method="post" action="TBD">
+<form class="article" method="post" action="{{ site.contact_lambda }}">
   <div>
-    <label for="name">Name</label>
+    <label for="name">Name</label><br>
     <input type="text" id="name" name="name">
   </div>
   <div>
-    <label for="email">Email</label><
+    <label for="email">Email</label><br>
     <input type="email" id="email" name="email">
   </div>
   <div>
