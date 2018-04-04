@@ -9,9 +9,9 @@ title: Your Document details
 <p>If you want to know more about why this is secure <a href="security.html" target ="_blank">read this</a> (the link will open in a new tab and you can come back to this one to complete the process)</p>
 <p>After your payment is complete you will be redirected to a holding page while your Notarisation Certificate is created.</p>
 
-
+<div style="overflow: auto">
 <form action="{{ site.payment_lambda }}" method="POST">
-  <table class="table table-dark" overflow="auto">
+  <table class="table table-dark">
     <tbody>
       <tr>
         <th>Filename</th>
@@ -49,6 +49,8 @@ title: Your Document details
     data-currency="{{ site.stripe_currency }}">
   </script>
 </form>
+</div>
+
 <script deferred>
     var str = window.location.search.replace(/^\?/,'')
     console.log(str);
