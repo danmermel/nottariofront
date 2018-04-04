@@ -6,6 +6,10 @@ title: Contact Nottario
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <form class="article" method="post" action="{{ site.contact_lambda }}">
   <div>
+    <label for="name">Submission ID (if known)</label><br>
+    <input type="text" id="submissionid" name="submissionid">
+  </div>
+  <div>
     <label for="name">Name</label><br>
     <input type="text" id="name" name="name">
   </div>
