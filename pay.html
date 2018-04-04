@@ -1,11 +1,17 @@
 ---
 layout: minimal
-title: Nottario Pay
+title: Your Document details
 ---
 <h2>{{ page.title }}</h2>
-<p>blurb</p>
+
+<p>Below are the details of your document, along with its unique cryptographic hash.</p>
+<p>If you want to commit them to the Ethereum blockchain click on the Pay button below and follow the instructions.</p>
+<p>If you want to know more about why this is secure <a href="security.html" target ="_blank">read this</a> (the link will open in a new tab and you can come back to this one to complete the process)</p>
+<p>After your payment is complete you will be redirected to a holding page while your Notarisation Certificate is created.</p>
+
+
 <form action="{{ site.payment_lambda }}" method="POST">
-  <table class="table table-dark">
+  <table class="table table-dark" overflow="auto">
     <tbody>
       <tr>
         <th>Filename</th>
