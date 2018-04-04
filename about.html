@@ -5,18 +5,18 @@ title: About Nottario
 <h1 class="cover-heading">{{ page.title }}</h1>
 <div class="row">
   <div class="col-lg-12">
-    <p>In the global economy, knowledge is power. Generating knowledge is hard. When you have original content (be it ideas, designs or any other form of Intellectual Property), you want to protect it. <strong>Nottario helps you protect your Intellectual Property.</strong></p>
     <blockquote><i><strong>Notarise</strong> v. to be witness of the authenticity of a document and its accompanying signatures in one's capacity as notary public</i></p>
+    <p>In the global economy, knowledge is power. Generating knowledge is hard. When you have original content (be it ideas, designs or any other form of Intellectual Property), you want to protect it. <strong>Nottario helps you protect your Intellectual Property.</strong></p>
     <p><strong>Nottar.io</strong> is a service that allows you to notarise documents using the <a href="https://ethereum.org/" target="_new">Ethereum blockchain</a>.</p>
-    <h3>WHAT?</h3>
+    <h3>What does that mean?</h3>
     <p>In the past, if you wanted to prove that you had a certain document at a certain point in time, you might take it to a notary public who would, for a fee, be witness to that fact. And the fees were (and are!) significant.</p>
     <p>Today, the blockchain can do that for you without involving a notary public or solicitor and for a much smaller fee.</p>
-    <h3> HOW?</h3> 
+    <h3> How does it work?</h3> 
     <h4>Identity</h4> 
     <p>Any electronic document (Word, Excel, PDF, jpg or anything else) has a unique <a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function" target="_new">cryptographic "fingerprint" or hash</a>. it is unique to that document and that document only. If you make even the tiniest change to the document (remove a comma in a contract, for example), the new document's hash will be completely different. By hashing your document you are obtaining a unique identifier for it, without actually revealing any information about the document itself.</p>
     <h4>Timestamp</h4>
     <p>By submitting your document's hash in a <a href="https://en.wikipedia.org/wiki/Smart_contract" target="_new">Smart Contract</a> to the <a href="ethereum.html">Ethereum blockchain</a> (the hash, remember, NOT the document itself), you are obtaining an unforgeable timestamp for your action, because every block in the blockchain has a timestamp and that timestamp cannot be altered.  (See, for example, <a href="https://etherscan.io/block/3907186" target="_new">this block's timestamp</a>)</p>
-    <p>The combination of those to things (the hash in the Smart Contract and the timestamp) means that you can point to a document in your possession and to the smart contract on the blockchain, and assert that you have had that document since at least that particular point in time.</p>
+    <p>The combination of those to things (the hash in the Smart Contract and the timestamp from the blockchain) means that you can point to a document in your possession and to the smart contract on the blockchain, and assert that you have had that document since at least that particular point in time.</p>
     <p>And, because the data in the blockchain is readable and publicly accessible, anyone can verify your claim. They can read the Smart Contract, extract the hash and compare it to the hash of the document in your possession. If the two hashes are the same, the two documents must be the same.
     <h3>So what?</h3>
     <p>There are plenty of real-world uses for this:
@@ -28,8 +28,8 @@ title: About Nottario
     </p>
  	<h3>I like it! What do I do?</h3>
  	<p>Click the button below and simply drag and drop your document into the dropzone. Remember, <strong>your document stays with you</strong>. ONLY the hash gets uploaded to the public internet. <strong>Nottario</strong>  does not even copy your document to its servers because the hash calculation is performed by your browser on your machine. Your document never leaves your computer.</p>
- 	<p>Then follow the payment instructions. Once your payment has been accepted your document hash will be on its way to the Ethereum blockchain!</p>
-	<p><strong>Remember:</strong>Wait until the transaction has been processed! This can take up to a minute. You will be redirected to a page with a web URL like this <a href="https://nottar.io/certificate.html#0xcb0f6959b2d53a4c9e5fb7471d25725acc9d38da">https://nottar.io/certificate.html#0xcb0f6...</a>. This is your certificate page and you can always come back to it.</p>
+ 	<p>Then follow the payment instructions. Once your payment has been accepted your document hash will be on its way to the Ethereum blockchain and you will get your Notarisation Certificate!</p>
+	<p><strong>Remember:</strong> Wait until the transaction has been processed! This can take up to a minute. You will be redirected to a page with a web URL like this <a href="https://nottar.io/certificate.html?0xcb0f6959b2d53a4c9e5fb7471d25725acc9d38da">https://nottar.io/certificate.html?0xcb0f6...</a>. This is your certificate page and you can always come back to it.</p>
 	<p>The last bit of that web URL is the address of your Smart Contract on the blockchain. Keep a note of it. Even if we go out of business you will always be able to access the Smart Contract. <a href="forever.html">This page</a> gives you more details on how to do that.</p>
   </div>
 </div>
