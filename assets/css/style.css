@@ -81,3 +81,9 @@ a.title, a.title:hover, a.title:focus, a.title:active {
 pre {
   color:white
 }
+
+.certificate {
+  border-radius: 25px;
+  border: 1px solid #666666;
+  padding: 10px;
+}
