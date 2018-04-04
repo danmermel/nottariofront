@@ -22,7 +22,11 @@ title: Nottario
   </header>
 
 <div id="drop_zone" ondrop="drop_handler(event);" ondragover="allowDrop(event)" ondragleave="dragout(event)">
-  <h2 class="text-center">Drag and drop a file here to get started</h2>
+  <h2 class="text-center">Drag and drop a file here to get started, or</h2>
+   <div>
+     <label for="file">Choose file to upload</label>
+     <input type="file" id="fileselect" name="fileselect" onchange="onFileSelect(this)">
+   </div>
 </div>
 
 <section id="contact">

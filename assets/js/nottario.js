@@ -18,7 +18,10 @@ function drop_handler(ev) {
   ev.preventDefault();
   app.dragging=false;
   console.log('ev is', ev);
-  var f = ev.dataTransfer.files[0];
+  processFile(ev.dataTransfer.files[0])
+}
+
+var processFile = function(f) {
   if (!f) {
     return alert('Cannot read file meta data');
   }
@@ -44,6 +47,13 @@ function drop_handler(ev) {
     });
   };
   reader.readAsText(f);
+}
+
+var onFileSelect = function(f) {
+  var file = f.files[0];  
+  if (file) {
+    processFile(file)
+  }
 }
 
 function reveal() {
