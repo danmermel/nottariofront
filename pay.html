@@ -2,6 +2,8 @@
 layout: minimal
 title: Nottario Pay
 ---
+<h2>{{ page.title }}</h2>
+<p>blurb</p>
 <form action="{{ site.payment_lambda }}" method="POST">
   <table class="table table-dark">
     <tbody>
@@ -22,7 +24,7 @@ title: Nottario Pay
         <td><input id="lastModified" readonly class="form-control" type="text" name="lastModified" value=""></td>
       </tr>      
       <tr>
-        <th>Hash</th>
+        <th>Cryptographic Hash</th>
         <td><input id="hash" readonly class="form-control" type="text" name="hash" value=""></td>
       </tr>
     </tbody>
@@ -59,4 +61,4 @@ title: Nottario Pay
     $('#type').val(obj.type);
     $('#lastModified').val(obj.lastModified);
     $('#hash').val(obj.hash);
-  </script>
+</script>
