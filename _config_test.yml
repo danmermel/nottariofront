@@ -27,5 +27,5 @@ email: your-email@example.com
 twitter: nottario
 success_url: http://windermere:4000/success.html
 error_url: http://windermere:4000/error.html
-recaptcha_key: abc123
+recaptcha_key: 6LeU9VAUAAAAAA0_ucqoFquRQ2LUpa9lVX46oCmV
 
