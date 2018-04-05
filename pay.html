@@ -11,40 +11,26 @@ title: Your Document details
 
 <div style="overflow: auto">
 <form action="{{ site.payment_lambda }}" method="POST">
-  <table class="table table-dark">
-    <tbody>
-      <tr>
-        <th>Filename</th>
-      </tr>
-      <tr>
-        <td><input id="name" readonly class="form-control" type="text" name="name" value=""></td>
-      </tr>
-      <tr>
-        <th>File type</th>
-      </tr>
-      <tr>
-        <td><input id="type" readonly class="form-control" type="text" name="type" value=""></td>
-      </tr>
-      <tr>
-        <th>File size</th>
-      </tr>
-      <tr>
-        <td><input id="size" readonly class="form-control" type="text" name="size" value=""></td>
-      </tr>      
-      <tr>
-        <th>Last modified</th>
-      </tr>
-      <tr>
-        <td><input id="lastModified" readonly class="form-control" type="text" name="lastModified" value=""></td>
-      </tr>      
-      <tr>
-        <th>Cryptographic Hash</th>      
-     </tr>
-      <tr>
-        <td><input id="hash" readonly class="form-control" type="text" name="hash" value=""></td>
-      </tr>
-    </tbody>
-  </table> 
+  <h3>Filename</h3>
+  <div>
+    <input id="name" readonly class="form-control" type="text" name="name" value="">
+  </div>
+  <h3>File type</h3>
+  <div>
+    <input id="type" readonly class="form-control" type="text" name="type" value="">
+  </div>
+  <h3>File size</h3>
+  <div>
+    <input id="size" readonly class="form-control" type="text" name="size" value="">
+  </div>
+  <h3>Last modified</h3>
+  <div>
+    <input id="lastModified" readonly class="form-control" type="text" name="lastModified" value="">
+  </div>
+  <h3>Cryptographic Hash</h3>
+  <div>
+    <input id="hash" readonly class="form-control" type="text" name="hash" value="">
+  </div>
   <input type="hidden" name="success" value="{{ site.success_url }}">
   <input type="hidden" name="failure" value="{{ site.error_url }}">
 
