@@ -26,7 +26,7 @@ check_lambda: https://o8lbv2rr1e.execute-api.eu-west-1.amazonaws.com/nottario_li
 contact_lambda: https://o8lbv2rr1e.execute-api.eu-west-1.amazonaws.com/nottario_live/nottarioFiatContact
 email: your-email@example.com
 twitter: nottario
-success_url: http://windermere:4000/success.html
-error_url: http://windermere:4000/error.html
+success_url: https:/danmermel.github.io/nottariofront/success.html
+error_url: https://danmermel.github.io/nottariofront/error.html
 recaptcha_key: 6LeU9VAUAAAAAA0_ucqoFquRQ2LUpa9lVX46oCmV
 
