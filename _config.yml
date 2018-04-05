@@ -16,8 +16,9 @@
 host: 0.0.0.0
 title: Nottario
 stripe_key: pk_live_Yh6sSgUn7kMzAGWiPu9YuN9X
-stripe_price: 99
-stripe_currency: gbp
+stripe_price: 999
+stripe_currency: usd
+stripe_visible_price: US$0.99
 stripe_name: Exor Ventures Ltd (Nottario)
 payment_lambda: https://o8lbv2rr1e.execute-api.eu-west-1.amazonaws.com/nottario_live/nottarioFiatPaymentProd
 get_lambda: https://o8lbv2rr1e.execute-api.eu-west-1.amazonaws.com/nottario_live/nottarioFiatGetProd

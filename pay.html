@@ -11,29 +11,33 @@ title: Your Document details
 
 <div style="overflow: auto">
 <form action="{{ site.payment_lambda }}" method="POST">
-  <h3>Filename</h3>
+  <h3 class="h3sp">Filename</h3>
   <div>
     <input id="name" readonly class="form-control" type="text" name="name" value="">
   </div>
-  <h3>File type</h3>
+  <h3 class="h3sp">File type</h3>
   <div>
     <input id="type" readonly class="form-control" type="text" name="type" value="">
   </div>
-  <h3>File size</h3>
+  <h3 class="h3sp">File size</h3>
   <div>
     <input id="size" readonly class="form-control" type="text" name="size" value="">
   </div>
-  <h3>Last modified</h3>
+  <h3 class="h3sp">Last modified</h3>
   <div>
     <input id="lastModified" readonly class="form-control" type="text" name="lastModified" value="">
   </div>
-  <h3>Cryptographic Hash</h3>
+  <h3 class="h3sp">Cryptographic Hash</h3>
   <div>
     <input id="hash" readonly class="form-control" type="text" name="hash" value="">
   </div>
+  
   <input type="hidden" name="success" value="{{ site.success_url }}">
   <input type="hidden" name="failure" value="{{ site.error_url }}">
-
+  <div class="h3sp">
+    Click the "Pay with card" button below to pay {{ site.stripe_visible_price }}.
+  </div>
+  <div class="h3sp">&nbsp;</div>
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="{{ site.stripe_key }}"
