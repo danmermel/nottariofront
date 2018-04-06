@@ -39,7 +39,7 @@ var processFile = function(f) {
       app.hash = d;
       console.log("hash is " + app.hash);
       var url = 'pay.html?name='+encodeURIComponent(app.name);
-      url += '&lastModified='+encodeURIComponent(new Date(app.lastModified));
+      url += '&lastModified='+encodeURIComponent(app.lastModified);
       url += '&size='+encodeURIComponent(app.size);
       url += '&type='+encodeURIComponent(app.type);
       url += '&hash='+encodeURIComponent(app.hash);
