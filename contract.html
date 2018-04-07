@@ -134,23 +134,6 @@
         </div>
     </section>
 
-    <section>
-       <div class="container">
-         <div class="row">
-           <div class="col-lg-12 text-center">
-
-               <h3>To verify, drag and drop a file into the dropzone</h3>
-               <hr class="star-light">
-               <div id="drop_zone" v-bind:class="{ dragging: dragging }" ondrop="verify_file(event);" ondragover="allowDrop(event)" ondragleave="dragout(event)">
-                 <strong>Drop Zone ...</strong>
-               </div>
-               <div v-if="verified && droppedHash" class="verified">VERIFIED! The dropped document matches the one submitted to the blockchain!</div>
-               <div v-if="!verified && droppedHash" class="unverified">NOT VERIFIED! The dropped document does NOT match the one submitted to the blockchain :-(</div>
-           </div>
-        </div>
-      </div>
-    </section>
-
     <section id="blockchain">
        <div class="container">
          <div class="row">
