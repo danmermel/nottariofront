@@ -4,23 +4,25 @@ title: Payment Success
 ---
   <h1>{{ page.title }}</h1>
   <p>We have received your payment and have queued the details of your document for submission to the <a href="ethereum.html">Ethereum blockchain.</a></p>
+  <div class="text-center">
+    <div><img src="assets/img/ellipsis.gif"></img></div>
+    <p>Stand by....</p>
+  </div>
   <p>This process could take a few minutes. You can leave this page open or come back to it at any time. When your submission has been processed we will redirect you to your Notarisation Certificate.</p>
   <p>If you want to <a href="contact.html"> contact us</a>, please make sure you include your submission id below.</p>
 
-  <table  class="table table-striped">
-    <tr><th>Submission ID</th><td id="subid"></td></tr>
-    <tr><th>Document Name</th><td id="name"></td></tr>
-    <tr><th>Submitted to the Blockchain on</th><td id="submitted"></td></tr>
-    <tr><th>Blockchain Transaction Id</th><td id="transid"></td></tr>
-  </table>
-  <div class="text-center">
-    <p>Stand by....</p>
-    <img src="assets/img/pacman.gif"></img>
-  </div>
+  <h3 class="h3sp">Submission Id</h3>
+  <input id="subid" readonly class="form-control" type="text" name="subid" value="">
+  <h3 class="h3sp">Document Name</h3>
+  <input id="name" readonly class="form-control" type="text" name="name" value="">
+  <h3 class="h3sp">Submitted to the Blockchain on</h3>
+  <input id="submitted" readonly class="form-control" type="text" name="submitted" value="">
+  <h3 class="h3sp">Blockchain Transaction Id</h3>
+  <input id="transid" readonly class="form-control" type="text" name="transid" value="">
   <script>
      var id = window.location.search.replace(/^\?/,'')
      console.log(id);
-     $('#subid').html(id);
+     $('#subid').val(id);
      var action_url = '{{ site.check_lambda }}';
      var poller = function() {
        $.ajax({
@@ -31,11 +33,11 @@ title: Payment Success
            console.log('error',e);
          },
          success: function(d) {
-           $('#name').html(d.Item.name);
+           $('#name').val(d.Item.name);
            if(d.Item.submitted_date) {
-             $('#submitted').html(new Date(d.Item.submitted_date));
+             $('#submitted').val(new Date(d.Item.submitted_date));
            }
-           $('#transid').html(d.Item.eth_transaction_id);
+           $('#transid').val(d.Item.eth_transaction_id);
            if(d.Item.stat=="completed") {
              window.location="certificate.html?"+d.Item.eth_contract_id
            } else {

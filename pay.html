@@ -1,13 +1,11 @@
 ---
 layout: minimal
-title: Your Document details
+title: Document details
 ---
 <h2>{{ page.title }}</h2>
 
 <p>Below are the details of your document, along with its unique cryptographic hash.</p>
 <p>If you want to commit them to the Ethereum blockchain click on the Pay button below and follow the instructions.</p>
-<p>If you want to know more about why this is secure <a href="security.html" target ="_blank">read this</a> (the link will open in a new tab and you can come back to this one to complete the process)</p>
-<p>After your payment is complete you will be redirected to a holding page while your Notarisation Certificate is created.</p>
 
 <div style="overflow: auto">
 <form action="{{ site.payment_lambda }}" method="POST">
@@ -25,7 +23,8 @@ title: Your Document details
   </div>
   <h3 class="h3sp">Last modified</h3>
   <div>
-    <input id="lastModified" readonly class="form-control" type="text" name="lastModified" value="">
+    <input id="lastModified" readonly class="form-control" type="hidden" name="lastModified" value="">
+    <input id="lastModifiedVisible" readonly class="form-control" type="text" name="lastModifiedVisible" value="">
   </div>
   <h3 class="h3sp">Cryptographic Hash</h3>
   <div>
@@ -34,10 +33,13 @@ title: Your Document details
   
   <input type="hidden" name="success" value="{{ site.success_url }}">
   <input type="hidden" name="failure" value="{{ site.error_url }}">
+  <div class="h3sp">&nbsp;</div>
+
+  <p>If you want to know more about why this is secure <a href="security.html" target ="_blank">read this</a> (the link will open in a new tab and you can come back to this one to complete the process)</p>
+  <p>After your payment is complete you will be redirected to a holding page while your Notarisation Certificate is created.</p>
   <div class="h3sp">
     Click the "Pay with card" button below to pay {{ site.stripe_visible_price }}.
   </div>
-  <div class="h3sp">&nbsp;</div>
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="{{ site.stripe_key }}"
@@ -70,5 +72,6 @@ title: Your Document details
     $('#size').val(obj.size);
     $('#type').val(obj.type);
     $('#lastModified').val(obj.lastModified);
+    $('#lastModifiedVisible').val(new Date(parseInt(obj.lastModified)));
     $('#hash').val(obj.hash);
 </script>

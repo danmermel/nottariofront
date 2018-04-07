@@ -6,19 +6,20 @@ title: Notarisation Certificate
     <h2 style="text-align:center">{{ page.title }}</h2>
     <hr class="star-light">
     <h3 class="h3sp">Document Name</h3>
-    <div id="name"></div>
+    <input id="name" readonly class="form-control" type="text" name="name" value="">
     <h3 class="h3sp">File type</h3>
-    <div id="type"></div>
+    <input id="type" readonly class="form-control" type="text" name="type" value="">
     <h3 class="h3sp">Size (bytes)</h3>
-    <div id="size"></div>
+    <input id="size" readonly class="form-control" type="text" name="size" value="">
     <h3 class="h3sp">Last Modified</h3>
-    <div id="lastModified"></div>
+    <input id="lastModified" readonly class="form-control" type="text" name="lastModified" value="">
     <h3 class="h3sp">Cryptographic Hash</h3>
-    <div id="hash"></div>
+    <input id="hash" readonly class="form-control" type="text" name="hash" value="">  
     <h3 class="h3sp">Committed to the Blockchain on</h3>
-    <div id="timestamp"></div>
+    <input id="timestamp" readonly class="form-control" type="text" name="timestamp" value="">
     <h3 class="h3sp">Blockchain Address</h3>
-    <div><a href="" id="address" target="_new"></a></div>
+    <input id="address" readonly class="form-control" type="text" name="address" value="">
+    <div><a href="" id="addresslink" target="_new">Etherscan</a></div>
   </div>
 
   <p>Congratulations! Your document has been notarised on the Ethereum blockchain and this is your certificate.</p>
@@ -60,17 +61,17 @@ title: Notarisation Certificate
        success: function(d) {
          console.log(d)
          contract = d 
-         $('#address').html(d.eth_contract_id)
-         $('#address').attr('href','https://etherscan.io/address/'+d.eth_contract_id)
-         $('#status').html(JSON.stringify(d));
-         $('#name').html(d.name)
-         $('#hash').html(d.hash)
+         $('#address').val(d.eth_contract_id)
+         $('#addresslink').attr('href','https://etherscan.io/address/'+d.eth_contract_id)
+         $('#status').val(JSON.stringify(d));
+         $('#name').val(d.name)
+         $('#hash').val(d.hash)
          var lastmod = new Date(parseInt(d.lastModified))
-         $('#lastModified').html(lastmod)
-         $('#type').html(d.type)
-         $('#size').html(d.size)
+         $('#lastModified').val(lastmod)
+         $('#type').val(d.type)
+         $('#size').val(d.size)
          var compdate = new Date (d.completed_date)
-         $('#timestamp').html(compdate)
+         $('#timestamp').val(compdate)
          $("#drop_zone").show();
        }
      })
