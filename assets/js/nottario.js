@@ -62,11 +62,22 @@ function reveal() {
 }
 
 function verify_file(ev) {
+  ev.preventDefault();
+  var f = ev.dataTransfer.files[0];
+  process_verify_file(f);
+}
+
+function verify_file_select(f) {
+  var file = f.files[0];  
+  if (file) {
+    process_verify_file(file)
+  }
+}
+
+function process_verify_file(f) {
   $('#verified').hide()
   $('#unverified').hide();
   console.log("Verifying");
-  ev.preventDefault();
-  var f = ev.dataTransfer.files[0];
   console.log ("the file is" , f);
   var reader = new FileReader();
   reader.onload = function(event) {
@@ -81,7 +92,6 @@ function verify_file(ev) {
          $('#unverified').show();
        }
     });  
-
   };
   reader.readAsText(f);
 }
