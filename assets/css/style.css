@@ -2,12 +2,16 @@
   border: 5px dashed white;
   width:  100%;
   min-height: 200px;
-  padding:50px;
+/*  padding:50px; */
   margin-top:50px;
 /*  margin-bottom:50px; */
   display: none
 }
 
+#fileselect {
+  width: 80%;
+  max-width: 400px
+}
 
 .skills {
  margin-left:50px;
