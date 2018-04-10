@@ -6,27 +6,26 @@ title: Document details
 
 <p>Below are the details of your document, along with its unique cryptographic hash.</p>
 <p>If you want to commit them to the Ethereum blockchain click on the Pay button below and follow the instructions.</p>
-
 <div style="overflow: auto">
 <form action="{{ site.payment_lambda }}" method="POST">
-  <h3 class="h3sp">Filename</h3>
+  <h3 class="h3sp">Filename <i class="fa fa-question-circle q" aria-hidden="true" data-toggle="popover" title="Filename" data-content="The name of the file you chose to notarise."></i></h3>
   <div>
     <input id="name" readonly class="form-control" type="text" name="name" value="">
   </div>
-  <h3 class="h3sp">File type</h3>
+  <h3 class="h3sp">File type <i class="fa fa-question-circle q" aria-hidden="true" data-toggle="popover" title="File type" data-content="The type of the file being notarised. Nottar.io can notarise any file type - images, PDFs, Word docs etc."></i></h3>
   <div>
     <input id="type" readonly class="form-control" type="text" name="type" value="">
   </div>
-  <h3 class="h3sp">File size</h3>
+  <h3 class="h3sp">File size <i class="fa fa-question-circle q" aria-hidden="true" data-toggle="popover" title="File size" data-content="The number of bytes occupied by your file on disk. The file is not uploaded, only the meta data you see here."></i></h3>
   <div>
     <input id="size" readonly class="form-control" type="text" name="size" value="">
   </div>
-  <h3 class="h3sp">Last modified</h3>
+  <h3 class="h3sp">Last modified <i class="fa fa-question-circle q" aria-hidden="true" data-toggle="popover" title="Last modified" data-content="The date and time your file was last saved."></i></h3>
   <div>
     <input id="lastModified" readonly class="form-control" type="hidden" name="lastModified" value="">
     <input id="lastModifiedVisible" readonly class="form-control" type="text" name="lastModifiedVisible" value="">
   </div>
-  <h3 class="h3sp">Cryptographic Hash</h3>
+  <h3 class="h3sp">Cryptographic Hash <i class="fa fa-question-circle q" aria-hidden="true" data-toggle="popover" title="Hash" data-content="The digital fingerprint for your file calculated using cryptography. Only a file with exactly the same contents will share the same hash."></i></h3>
   <div>
     <input id="hash" readonly class="form-control" type="text" name="hash" value="">
   </div>
@@ -56,6 +55,9 @@ title: Document details
 <div class="h3sp">&nbsp;</div>
 
 <script deferred>
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+    })
     var str = window.location.search.replace(/^\?/,'')
     console.log(str);
     var bits = str.split('&')

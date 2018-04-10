@@ -11,6 +11,14 @@
   display: none
 }
 
+.popover-header {
+  background-color: #18BC9C
+}
+
+.q {
+  opacity: 0.5
+}
+
 #fileselect {
   width: 80%;
   max-width: 400px;
