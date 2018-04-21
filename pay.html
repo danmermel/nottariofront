@@ -4,7 +4,7 @@ title: Document details
 ---
 <h2>{{ page.title }}</h2>
 
-<p>Below are the details of your document, along with its unique cryptographic hash.</p>
+<p>Below are the details of your document, along with its unique digital fingerprint.</p>
 <p>If you want to commit them to the Ethereum blockchain click on the Pay button below and follow the instructions.</p>
 <div style="overflow: auto">
 <form action="{{ site.payment_lambda }}" method="POST">
@@ -25,7 +25,7 @@ title: Document details
     <input id="lastModified" readonly class="form-control" type="hidden" name="lastModified" value="">
     <input id="lastModifiedVisible" readonly class="form-control" type="text" name="lastModifiedVisible" value="">
   </div>
-  <h3 class="h3sp">Cryptographic Hash <i class="fa fa-question-circle q" aria-hidden="true" data-toggle="popover" title="Hash" data-content="The digital fingerprint for your file calculated using cryptography. Only a file with exactly the same contents will share the same hash."></i></h3>
+  <h3 class="h3sp">Digital fingerprint <i class="fa fa-question-circle q" aria-hidden="true" data-toggle="popover" title="Hash" data-content="The digital fingerprint for your file calculated using cryptography. Only a file with exactly the same contents will share the same fingerprint."></i></h3>
   <div>
     <input id="hash" readonly class="form-control" type="text" name="hash" value="">
   </div>
