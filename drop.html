@@ -1,0 +1,38 @@
+---
+layout: default
+title: Ready to notarise? This is how it works
+---
+
+<h2>{{ page.title }}</h2>
+
+  <div class="container call_to_action">
+    <div class="row text-center">
+      <div class="col-lg-4">
+        <i class="fa fa-file-text-o fa-5x icon-padding" aria-hidden="true"></i>
+        <i class="fa fa-arrow-right fa-5x icon-padding" aria-hidden="true"></i>
+        <i class="fa fa-slack fa-5x icon-padding" aria-hidden="true"></i>
+        <p><strong><i>1. We turn your document into a digital fingerprint</i></strong> </p>
+      </div>
+      <div class="col-lg-4">
+        <i class="fa fa-slack fa-5x icon-padding" aria-hidden="true"></i>
+        <i class="fa fa-arrow-right fa-5x icon-padding" aria-hidden="true"></i>
+        <i class="fa fa-chain fa-5x icon-padding" aria-hidden="true"></i>
+        <p><strong><i>2. We upload the fingerprint to the Ethereum Blockchain</i></strong> </p>
+      </div>
+      <div class="col-lg-4">
+        <i class="fa fa-certificate fa-5x icon-padding" aria-hidden="true"></i>
+        <i class="fa fa-check fa-5x icon-padding" aria-hidden="true"></i>
+        <p><strong><i>3. You keep your Notarisation Certificate!</i></strong> </p>
+      </div>
+    </div>
+  </div>
+
+<p>To start notarising your document simply drag it into the drop-zone or choose a file from your computer. </p>
+
+<div id="drop_zone" ondrop="drop_handler(event);" ondragover="allowDrop(event)" ondragleave="dragout(event)">
+  <h3 class="text-center">Drag and drop a file here, or...</h3>
+   <div class="text-center">
+     <input class="btn btn-secondary" type="file" id="fileselect" name="fileselect" onchange="onFileSelect(this)">
+   </div>
+</div>
+

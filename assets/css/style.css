@@ -1,3 +1,12 @@
+.inprogress {
+  font-weight: bold;
+  color: red
+}
+
+.todo {
+  color: #aaaaaa
+}
+
 #drop_zone {
   border: 5px dashed white;
   width:  100%;
@@ -8,7 +17,6 @@
   padding-right: 10px;
   margin-top:50px;
 /*  margin-bottom:50px; */
-  display: none
 }
 
 .popover-header {
@@ -108,4 +116,9 @@ pre {
 
 .h3sp {
   margin-top: 25px;
+}
+
+.call_to_action {
+  margin-top: 50px;
+  margin-bottom: 50px
 }
