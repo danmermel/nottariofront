@@ -1,0 +1,72 @@
+<div class="container call_to_action">
+  <div class="row bs-wizard" style="border-bottom:0">
+    {% if page.step == 1 %}
+      {% assign activeclass="active" %}
+    {% else %}
+      {% assign activeclass="disabled" %}
+    {% endif %}
+    {% if page.step > 1 %}
+      {% assign activeclass="complete" %}
+    {% endif %}
+    <div class="col-xs-3 bs-wizard-step {{ activeclass }}">
+      <div class="text-center bs-wizard-stepnum">Step 1</div>
+      <div class="progress">
+        <div class="progress-bar"></div>
+      </div>
+      <a href="#" class="bs-wizard-dot"></a>
+      <div class="bs-wizard-info text-center">Fingerprint</div>
+    </div>
+
+    {% if page.step == 2 %}
+      {% assign activeclass="active" %}
+    {% else %}
+      {% assign activeclass="disabled" %}
+    {% endif %}
+    {% if page.step > 2 %}
+      {% assign activeclass="complete" %}
+    {% endif %}
+    <div class="col-xs-3 bs-wizard-step {{ activeclass }}">
+
+      <div class="text-center bs-wizard-stepnum">Step 2</div>
+      <div class="progress">
+        <div class="progress-bar"></div>
+      </div>
+      <a href="#" class="bs-wizard-dot"></a>
+      <div class="bs-wizard-info text-center">Payment</div>
+    </div>
+
+    {% if page.step == 3 %}
+      {% assign activeclass="active" %}
+    {% else %}
+      {% assign activeclass="disabled" %}
+    {% endif %}
+    {% if page.step > 3 %}
+      {% assign activeclass="complete" %}
+    {% endif %}
+    <div class="col-xs-3 bs-wizard-step {{ activeclass  }}">
+      <div class="text-center bs-wizard-stepnum">Step 3</div>
+      <div class="progress">
+        <div class="progress-bar"></div>
+      </div>
+      <a href="#" class="bs-wizard-dot"></a>
+      <div class="bs-wizard-info text-center">Blockchain</div>
+    </div>
+
+    {% if page.step == 4 %}
+      {% assign activeclass="active" %}
+    {% else %}
+      {% assign activeclass="disabled" %}
+    {% endif %}
+    {% if page.step > 4 %}
+      {% assign activeclass="complete" %}
+    {% endif %}
+    <div class="col-xs-3 bs-wizard-step {{ activeclass }}">
+      <div class="text-center bs-wizard-stepnum">Step 4</div>
+      <div class="progress">
+        <div class="progress-bar"></div>
+      </div>
+      <a href="#" class="bs-wizard-dot"></a>
+      <div class="bs-wizard-info text-center">Certificate</div>
+    </div>
+  </div>
+</div>
