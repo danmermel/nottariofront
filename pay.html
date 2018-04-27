@@ -6,12 +6,31 @@ step: 2
 
 {% include progressbar.html %}
 
-<h2>{{ page.title }}</h2>
+<div class="text-center">
+ <i class="fa fa-thumbs-up fa-5x"></i>
+ <div class="step_success">Fingerprint calculated</div>
+</div>
 
-<p>Below are the details of your document, along with its unique digital fingerprint.</p>
-<p>If you want to commit them to the Ethereum blockchain click on the Pay button below and follow the instructions.</p>
-<div style="overflow: auto">
 <form action="{{ site.payment_lambda }}" method="POST">
+
+  <div class="text-center call_to_action">
+    <p>To commit the data below to the blockchain for {{ site.stripe_visible_price }} click on the Pay button .</p>
+
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="{{ site.stripe_key }}"
+    data-amount="{{ site.stripe_price }}"
+    data-name="{{ site.stripe_name }}"
+    data-description="Notarisation charge"
+    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+    data-locale="auto"
+    data-currency="{{ site.stripe_currency }}">
+  </script>
+  </div>
+
+
+<h2>Document details</h2>
+<div style="overflow: auto">
   <h3 class="h3sp">Filename <i class="fa fa-question-circle q" aria-hidden="true" data-toggle="popover" title="Filename" data-content="The name of the file you chose to notarise."></i></h3>
   <div>
     <input id="name" readonly class="form-control" type="text" name="name" value="">
@@ -40,21 +59,8 @@ step: 2
 
   <p>If you want to know more about why this is secure <a href="security.html" target ="_blank">read this</a> (the link will open in a new tab and you can come back to this one to complete the process)</p>
   <p>After your payment is complete you will be redirected to a holding page while your Notarisation Certificate is created.</p>
-  <div class="h3sp">
-    Click the "Pay with card" button below to pay {{ site.stripe_visible_price }}.
-  </div>
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="{{ site.stripe_key }}"
-    data-amount="{{ site.stripe_price }}"
-    data-name="{{ site.stripe_name }}"
-    data-description="Notarisation charge"
-    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-    data-locale="auto"
-    data-currency="{{ site.stripe_currency }}">
-  </script>
-</form>
 </div>
+</form>
 
 <div class="h3sp">&nbsp;</div>
 

@@ -6,14 +6,19 @@ step: 3
 
   {% include progressbar.html %}
 
-  <h1>{{ page.title }}</h1>
-  <p>We have received your payment and have queued the details of your document for submission to the <a href="ethereum.html">Ethereum blockchain.</a></p>
   <div class="text-center">
+    <i class="fa fa-thumbs-up fa-5x"></i>
+    <div class="step_success">Payment received</div>
+  </div>
+
+  <div class="text-center call_to_action">
     <div><img src="assets/img/ellipsis.gif"></img></div>
     <p>Stand by....</p>
   </div>
-  <p>This process could take a few minutes. You can leave this page open or come back to it at any time. When your submission has been processed we will redirect you to your Notarisation Certificate.</p>
-  <p>If you want to <a href="contact.html"> contact us</a>, please make sure you include your submission id below.</p>
+
+  <p>We have received your payment and have queued the details of your document for submission to the <a href="ethereum.html">Ethereum blockchain.</a></p>
+  <p>When your submission has been processed we will redirect you to your Notarisation Certificate.</p>
+  <p>This process could take a few minutes. You can leave this page open or come back to it at any time.</p>
 
   <h3 class="h3sp">Submission Id</h3>
   <input id="subid" readonly class="form-control" type="text" name="subid" value="">
@@ -23,6 +28,9 @@ step: 3
   <input id="submitted" readonly class="form-control" type="text" name="submitted" value="">
   <h3 class="h3sp">Blockchain Transaction Id</h3>
   <input id="transid" readonly class="form-control" type="text" name="transid" value="">
+
+  <p>If you need to <a href="contact.html"> contact us</a>, please make sure you include your submission id above.</p>
+
   <script>
      var id = window.location.search.replace(/^\?/,'')
      console.log(id);
