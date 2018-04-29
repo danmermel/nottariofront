@@ -14,7 +14,7 @@ step: 2
 <form action="{{ site.payment_lambda }}" method="POST">
 
   <div class="text-center call_to_action">
-    <p>To commit the data below to the blockchain for {{ site.stripe_visible_price }} click on the Pay button .</p>
+    <p>To commit the data below to the blockchain for {{ site.stripe_visible_price }} click on the Pay button.</p>
 
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -28,9 +28,12 @@ step: 2
   </script>
   </div>
 
-
 <h2>Document details</h2>
 <div style="overflow: auto">
+  <h3 class="h3sp">Digital fingerprint <i class="fa fa-question-circle q" aria-hidden="true" data-toggle="popover" title="Hash" data-content="The digital fingerprint for your file calculated using cryptography. Only a file with exactly the same contents will share the same fingerprint."></i></h3>
+  <div>
+    <input id="hash" readonly class="form-control" type="text" name="hash" value="">
+  </div>
   <h3 class="h3sp">Filename <i class="fa fa-question-circle q" aria-hidden="true" data-toggle="popover" title="Filename" data-content="The name of the file you chose to notarise."></i></h3>
   <div>
     <input id="name" readonly class="form-control" type="text" name="name" value="">
@@ -47,10 +50,6 @@ step: 2
   <div>
     <input id="lastModified" readonly class="form-control" type="hidden" name="lastModified" value="">
     <input id="lastModifiedVisible" readonly class="form-control" type="text" name="lastModifiedVisible" value="">
-  </div>
-  <h3 class="h3sp">Digital fingerprint <i class="fa fa-question-circle q" aria-hidden="true" data-toggle="popover" title="Hash" data-content="The digital fingerprint for your file calculated using cryptography. Only a file with exactly the same contents will share the same fingerprint."></i></h3>
-  <div>
-    <input id="hash" readonly class="form-control" type="text" name="hash" value="">
   </div>
   
   <input type="hidden" name="success" value="{{ site.success_url }}">
