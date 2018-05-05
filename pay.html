@@ -3,6 +3,12 @@ layout: minimal
 title: Document details
 step: 2
 ---
+  <script>
+    fbq('track', 'AddToCart', {
+      value: {{ site.stripe_price }},
+      currency: '{{ site.stripe_currency }}',
+    });
+  </script>
 
 {% include progressbar.html %}
 

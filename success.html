@@ -3,6 +3,12 @@ layout: default
 title: Payment Success
 step: 3
 ---
+  <script>
+    fbq('track', 'Purchase', {
+      value: {{ site.stripe_price }},
+      currency: '{{ site.stripe_currency }}',
+    });
+  </script>
 
   {% include progressbar.html %}
 

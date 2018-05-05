@@ -3,6 +3,12 @@ layout: default
 title: Ready to notarise? This is how it works
 step: 1
 ---
+  <script>
+    fbq('track', 'Lead', {
+      value: {{ site.stripe_price }},
+      currency: '{{ site.stripe_currency }}',
+    });
+  </script>
 
 {% include progressbar.html %}
 
