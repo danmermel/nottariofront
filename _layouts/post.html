@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {%- include head.html -%}
+
+  <body>
+    <div id="app" class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+
+      {%- include nav.html -%}
+
+      <h2>{{ page.title }}</h2> 
+      <main role="main" class="inner cover">
+        {{ content }}
+      </main>
+
+      {%- include footer.html -%}
+    
+    </div>
+
+  </body>
+
+</html>
