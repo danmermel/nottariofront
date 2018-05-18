@@ -1,13 +1,16 @@
 ---
+type: blog
 layout: post
 title: "What does Nottario do?"
+description: "Overview of the Nottario service"
+image: /assets/img/samuel-zeller.jpg
 date: 2018-05-16 10:39:00 +0100
 ---
 The Internet has created unprecedented opportunities for people to create and share on a global scale. That has mostly been a good thing.
 
 But it has also allowed people to take the creations of others with trivial simplicity. Think of how how easy it is to right-click on an image, save it to your desktop and use on your next presentation or flyer for your local event. This is technically a breach of copyright, yet it is happening countless times every day.
 
-<img class="img-responsive" src="/assets/img/samuel-zeller.jpg">
+<img class="img-fluid" src="{{ page.image }}">
 
 The answer is not necessarily to stop sharing (although some people do that), but to find ways to make sure that you can prove that you originated a certain piece of content if it ever were to come to a dispute about ownership.
 
