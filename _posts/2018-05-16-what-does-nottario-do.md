@@ -3,7 +3,7 @@ type: blog
 layout: post
 title: "What does Nottario do?"
 description: "Overview of the Nottario service"
-image: /assets/img/samuel-zeller.jpg
+image: /assets/img/sam-zeller.jpg
 date: 2018-05-16 10:39:00 +0100
 ---
 The Internet has created unprecedented opportunities for people to create and share on a global scale. That has mostly been a good thing.
