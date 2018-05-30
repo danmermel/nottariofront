@@ -2,7 +2,7 @@
 type: blog
 layout: post
 title: "Three killer blockchain use-cases"
-description: "Why is blockchain technology so talked about? Find out three use-cases where blockchains can disrpute existing markets."
+description: "Why is blockchain technology so talked about? Find out three use-cases where blockchains can disrupt existing markets."
 image: /assets/img/john-salvino.jpg
 date: 2018-05-30 09:00:00 +0100
 ---
