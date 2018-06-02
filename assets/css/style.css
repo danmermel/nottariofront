@@ -8,6 +8,15 @@ th {
  border: 1px solid white;
 }
 
+.modal-title {
+  color: #18BC9C;
+  text-shadow: none;
+}
+
+.modal-label {
+  color: #18BC9C;
+  text-shadow: none;
+}
 
 .img-responsive {
   max-width: 100%;
