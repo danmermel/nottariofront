@@ -2,7 +2,7 @@
 type: blog
 layout: post
 title: "Why use a blockchain over a database?"
-description: "Blockchains aren't suitable for every use-case, so when should you pick a blochain over a traditional database""
+description: "Blockchains aren't suitable for every use-case, so when should you pick a blochain over a traditional database"
 image: /assets/img/cristina-gottardi-192989-unsplash.jpg
 date: 2018-06-29 06:00:00 +0100
 ---
