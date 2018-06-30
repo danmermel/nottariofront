@@ -23,7 +23,7 @@ A blockchain, at its core, is a single table database - albeit one with some unu
 - reads are "free" (if you have a copy of the blockchain).
 - writes are slow - glacially slow by the standards of a "real" database.
 
-![padlock]({{ post.image }})
+![padlock]({{ page.image }})
 
 Like a distributed database that favours availability over consistency, a blockchain is "eventually" consistent - writes take time to propagate around the network, but eventually a consensus is reached and the database reaches a consistent state.
 
