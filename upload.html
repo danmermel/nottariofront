@@ -4,7 +4,7 @@ title: Nottario
 ---
 
 <script>
-  var u = 'https://7xgnabn4wl.execute-api.eu-west-1.amazonaws.com/default/nottarioFiats3Upload';
+  var u = "{{ site.upload_url }}"
 
   function allowDrop(ev) {
     ev.preventDefault();
@@ -20,20 +20,46 @@ title: Nottario
 
   function drop_handler(ev) {
     console.log("Drop");
+    $("#drop_zone").removeClass("dragging");
     ev.preventDefault();
     console.log('ev is', ev);
-    var f = ev.dataTransfer.files[0]
-    console.log(f.name, f.size, f.type)
-    var formData = new FormData()
-    formData.append('file', f)
-    uploadForm(formData);    
+    var f = ev.dataTransfer.files[0];
+
+    var reader = new FileReader();
+    reader.onload = function(event) {
+      console.log('onload!',event);
+      console.log(typeof event.target.result);
+      sha256(event.target.result).then(function(d){
+        console.log("digest is", d);
+        var metadata = {
+          "name":f.name,
+          "size":f.size,
+          "type":f.type,
+          "lastModified":f.lastModified,
+          "hash": d
+        }
+        console.log(metadata);
+        var formData = new FormData()
+        formData.append('file', f)
+        uploadForm(formData, metadata).then(function(id) {
+      
+          console.log('The id we need to poll is', id);
+          window.location = "upload_success.html?"+id   //bounce to success page and start polling for ipfs url
+        });
+      });
+    }
+
+    reader.readAsText(f);
   }
 
   // upload a file to S3 using a pre-signed URL
-  function uploadForm(formData) {
+  function uploadForm(formData, metadata) {
+    console.log('@@uploadForm');
+    var id = null;
 
     // get me a pre-signed URL
-    getURL().then(function(data) {
+    return getURL(metadata).then(function(data) {
+      id = data.id
 
       // make a PUT request to upload the file
       var req = {
@@ -44,14 +70,25 @@ title: Nottario
     }).then(function(data) { 
       // success
       console.log('Uploaded')
+      return id;
     }).catch(function(){ 
       console.log('Failed');
     });
   }
 
 
-  var getURL=function() {
-    return fetch(u).then(function(data) {
+  function getQueryString(params) {
+    return Object.keys(params)
+      .map(function(k) {  
+        return encodeURIComponent(k) + '=' + encodeURIComponent(params[k]);
+      }).join('&');
+  }
+
+  var getURL=function(metadata) {
+
+    var url = u + '?' + getQueryString(metadata);
+    console.log('full url', url);
+    return fetch(url).then(function(data) {
       var j = data.json()      
       console.log('success', j)
       return j;

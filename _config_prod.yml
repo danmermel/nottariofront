@@ -28,5 +28,7 @@ email: your-email@example.com
 twitter: "@nottar_io"
 success_url: https://nottar.io/success.html
 error_url: https://nottar.io/error.html
+upload_url: https://o8lbv2rr1e.execute-api.eu-west-1.amazonaws.com/default/nottarioFiats3UploadProd
+ipfs_check: https://o8lbv2rr1e.execute-api.eu-west-1.amazonaws.com/nottario_live/nottarioFiatipfsCheckProd
 recaptcha_key: 6LeU9VAUAAAAAA0_ucqoFquRQ2LUpa9lVX46oCmV
 GA_TRACKING_ID: UA-48512013-2

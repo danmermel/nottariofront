@@ -1,0 +1,46 @@
+---
+layout: minimal
+title: Nottario
+---
+
+<script>
+      
+  var id = window.location.search.replace("?","");
+  var url = '{{ site.ipfs_check }}' + '?id=' + id;
+  var interval = setInterval(function() {
+    fetch(url).then(function(data) {
+      return data.json();
+    }).then(function(j) {
+      if (j.Item.ipfs_hash) {
+        var ipfs_url="https://gateway.ipfs.io/ipfs/"+j.Item.ipfs_hash;
+        $("#ipfs").html('<a href="'+ipfs_url+'">here</a>');
+        $("#success").show();
+        $("#polling").hide();
+        var nottario_url = 'pay.html?name='+encodeURIComponent(j.Item.name);
+        nottario_url += '&lastModified='+encodeURIComponent(j.Item.lastModified);
+        nottario_url += '&size='+encodeURIComponent(j.Item.size);
+        nottario_url += '&type='+encodeURIComponent(j.Item.type);
+        nottario_url += '&hash='+encodeURIComponent(j.Item.hash);
+        $("#nottario_data").attr("href",nottario_url);
+        clearInterval(interval);
+      }
+      console.log(j);
+    })
+  },5000);
+ 
+</script>
+
+<div id="polling">
+
+  <h2>Polling...</h2>
+
+</div>
+
+<div id="success" class="hidden">
+Success! Your file has been uploaded to IPFS and it is <span id="ipfs"></span>
+
+<div class="text-center call_to_action">
+  <a id="nottario_data" href="" class="btn btn-secondary btn-lg">Get Started</a>
+</div>
+
+</div>

@@ -28,5 +28,7 @@ email: your-email@example.com
 twitter: "@nottar_io"
 success_url: http://windermere:4000/success.html
 error_url: http://windermere:4000/error.html
+upload_url: https://7xgnabn4wl.execute-api.eu-west-1.amazonaws.com/default/nottarioFiats3Upload
+ipfs_check: https://o8lbv2rr1e.execute-api.eu-west-1.amazonaws.com/nottario_live/nottarioFiatipfsCheck
 recaptcha_key: 6LeU9VAUAAAAAA0_ucqoFquRQ2LUpa9lVX46oCmV
 
