@@ -24,7 +24,8 @@ title: Nottario
     ev.preventDefault();
     console.log('ev is', ev);
     var f = ev.dataTransfer.files[0];
-
+    $("#drop_zone").hide()
+    $("#dropped").show()
     var reader = new FileReader();
     reader.onload = function(event) {
       console.log('onload!',event);
@@ -99,12 +100,20 @@ title: Nottario
 
 </script>
 
-<a class="btn" href="#" onclick="getURL()">Get URL</a>
+<p>
+To upload a file to the <a href="https://ipfs.io/" target="_new">IPFS</a>, drag and drop a file into the drop zone or choose
+a file from your computer.
+</p>
 
+<p><b>Warning: the IPFS is a distributed file sharing system that is open to everyone. Once you upload a file, it cannot
+be deleted. Make sure you are happy for the contents of your file to be publicly accessible forever.</b></p>
 
 <div id="drop_zone" ondrop="drop_handler(event);" ondragover="allowDrop(event)" ondragleave="dragout(event)">
   <h3 class="text-center">Drag and drop a file here, or...</h3>
    <div class="text-center">
      <input class="btn btn-secondary" type="file" id="fileselect" name="fileselect" onchange="onFileSelect(this)">
    </div>
+</div>
+<div id="dropped" class="hidden">
+  <p>Uploading...</p>
 </div>
