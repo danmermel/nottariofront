@@ -40,9 +40,8 @@ title: Nottario
           "hash": d
         }
         console.log(metadata);
-        var formData = new FormData()
-        formData.append('file', f)
-        uploadForm(formData, metadata).then(function(id) {
+
+        uploadForm(f, metadata).then(function(id) {
       
           console.log('The id we need to poll is', id);
           window.location = "upload_success.html?"+id   //bounce to success page and start polling for ipfs url
@@ -54,7 +53,7 @@ title: Nottario
   }
 
   // upload a file to S3 using a pre-signed URL
-  function uploadForm(formData, metadata) {
+  function uploadForm(f, metadata) {
     console.log('@@uploadForm');
     var id = null;
 
@@ -65,7 +64,10 @@ title: Nottario
       // make a PUT request to upload the file
       var req = {
         method: 'PUT',
-        body: formData
+        body: f,
+        headers: new Headers({
+          'Content-Type': f.type
+        })
       };
       return fetch(data.url, req);
     }).then(function(data) { 
