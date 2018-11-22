@@ -20,15 +20,15 @@ stripe_price: 9999
 stripe_currency: gbp
 stripe_visible_price: £99.99
 stripe_name: Exor Ventures Ltd (Nottario)
-payment_lambda: https://o8lbv2rr1e.execute-api.eu-west-1.amazonaws.com/nottario_live/nottarioFiatPaymentProd
-get_lambda: https://o8lbv2rr1e.execute-api.eu-west-1.amazonaws.com/nottario_live/nottarioFiatGetProd
-check_lambda: https://o8lbv2rr1e.execute-api.eu-west-1.amazonaws.com/nottario_live/nottarioFiatCheckProd
-contact_lambda: https://o8lbv2rr1e.execute-api.eu-west-1.amazonaws.com/nottario_live/nottarioFiatContactProd
+payment_lambda: https://u0w7zfpnti.execute-api.eu-west-1.amazonaws.com/prod/nottarioFiatPayment
+get_lambda: https://u0w7zfpnti.execute-api.eu-west-1.amazonaws.com/prod/nottarioFiatGet
+check_lambda: https://u0w7zfpnti.execute-api.eu-west-1.amazonaws.com/prod/nottarioFiatCheck
+contact_lambda: https://u0w7zfpnti.execute-api.eu-west-1.amazonaws.com/prod/nottarioFiatContact
 email: your-email@example.com
 twitter: "@nottar_io"
 success_url: https://nottar.io/success.html
 error_url: https://nottar.io/error.html
-upload_url: https://7xgnabn4wl.execute-api.eu-west-1.amazonaws.com/default/nottarioFiats3UploadProd
-ipfs_check: https://o8lbv2rr1e.execute-api.eu-west-1.amazonaws.com/nottario_live/nottarioFiatipfsCheckProd
+upload_url: https://u0w7zfpnti.execute-api.eu-west-1.amazonaws.com/prod/nottarioFiats3Upload
+ipfs_check: https://u0w7zfpnti.execute-api.eu-west-1.amazonaws.com/prod/nottarioFiatipfsCheck
 recaptcha_key: 6LeU9VAUAAAAAA0_ucqoFquRQ2LUpa9lVX46oCmV
 GA_TRACKING_ID: UA-48512013-2
