@@ -26,8 +26,8 @@ check_lambda: https://u0w7zfpnti.execute-api.eu-west-1.amazonaws.com/prod/nottar
 contact_lambda: https://u0w7zfpnti.execute-api.eu-west-1.amazonaws.com/prod/nottarioFiatContact
 email: your-email@example.com
 twitter: "@nottar_io"
-success_url: https://nottar.io/success.html
-error_url: https://nottar.io/error.html
+success_url: success.html
+error_url: error.html
 upload_url: https://u0w7zfpnti.execute-api.eu-west-1.amazonaws.com/prod/nottarioFiats3Upload
 ipfs_check: https://u0w7zfpnti.execute-api.eu-west-1.amazonaws.com/prod/nottarioFiatipfsCheck
 recaptcha_key: 6LeU9VAUAAAAAA0_ucqoFquRQ2LUpa9lVX46oCmV
